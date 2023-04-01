@@ -41,3 +41,35 @@ let point: { x: number; y: number; name: string} = {
 	y: 20,
 	name: "center of circle"
 }
+
+// function
+const logNumbers: (num: number) => number[]
+	// annotation
+	
+	= (num: number) => {
+	console.log(num)
+	return [num, num*2, num*2*2]
+	}
+
+// type inference = TS automatically asign types
+const logNumbers2 = (num: number) => {
+	console.log(num)
+	return true
+}
+
+let words = ['red', 'green', 'yellow']
+
+// declaration and initialization on seperate lines
+let selection: boolean;
+
+words.forEach(word => {
+	if(word === 'green') selection = true
+});
+
+// variable might cannot be inferred correctly
+let numbers = [-10, 12, 32]
+let positive: boolean | number = false
+
+numbers.forEach(val => {
+	if(val > 0) positive = val
+})
